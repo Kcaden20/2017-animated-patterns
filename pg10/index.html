@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Traceface - KC-EK</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+    	body {
+    	}
+    	canvas {
+    		position: absolute;
+    		top:0px;
+    		left:0px;
+overflow: scroll;
+    	}
+    	.wrap {
+    		width:100vw;
+    		height:100vh;
+    		position: absolute;
+    		top:-8%;
+    	}
+
+            .eye {
+                background-color: black;
+                border-radius: 50px;
+                display: inline-block;
+                margin-left: 20%;
+                margin-top: 20%;
+                height:40%;
+                width:20%;
+
+                
+            }
+            
+            .eye::before {
+                content: "";
+                position:absolute;
+                top:35%;
+                width:10%;
+                height:10%;
+                margin-left: -5%;
+                background-color: white;
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                z-index: 10;
+                pointer-events: none;
+            }
+            
+            .mouth {
+                background-color: white;
+                border:1px solid black;
+                border-radius: 50%;
+                height:20%;
+                margin: 5% auto 0px auto;
+                width:20%;
+                
+            }
+            
+
+            h1 {
+            	 color:white;
+            	 -webkit-text-stroke-width: 1px;
+            	 -webkit-text-stroke-color: black;
+            	font-family: sans-serif;
+            	z-index: 100;
+            	text-shadow: 2px 2px 4px #000000;
+/*             	display:none; */
+            }
+
+            .title {
+            	position: absolute;
+            	top: 50%;
+            	left: -115px;
+            	-ms-transform: rotate(90deg); /* IE 9 */
+                -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+                transform: rotate(90deg);
+
+            }
+
+            .Directions {
+            	text-align: center;
+            	position: absolute;
+            	margin-left: auto;
+				margin-right: auto;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				
+            }
+
+            .Fast-Slow {
+            	position: absolute;
+            	-ms-transform: rotate(-90deg); /* IE 9 */
+                -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+                transform: rotate(-90deg);
+            	top: 50%;
+                right: -90px;
+
+            }
+
+
+            .Refresh {
+            	text-align: center;
+            	position: absolute;
+            	margin-left: auto;
+				margin-right: auto;
+				left: 0;
+				right: 0;
+				
+
+            }
+
+              
+    </style>
+    <script type="text/javascript" src="paper-full.js"></script>
+    <script type="text/paperscript" canvas="canvas">
+    	tool.minDistance = 1;
+			tool.maxDistance = 1000;
+
+			var path;
+
+			function onMouseDown(event) {
+				path = new Path();
+				path.fillColor = {
+					hue: Math.random() * 360,
+					saturation: 1,
+					brightness: 1
+				};
+
+				path.add(event.point);
+			}
+
+			function onMouseDrag(event) {
+				var step = event.delta;
+				step.angle += 90;
+				
+				var top = event.middlePoint + step;
+				var bottom = event.middlePoint - step;
+				
+				path.add(top);
+				path.insert(0, bottom);
+				path.smooth();
+			}
+
+			function onMouseUp(event) {
+				path.add(event.point);
+				path.closed = true;
+				path.smooth();
+			}
+
+			var colors = ['#760CE8', '#4782B1', '#E8890C', '#42f486', '#4153f4', '#ef103d'];
+
+			var changeBackground = function() {
+			 document.body.style.background = colors[Math.floor(Math.random()*colors.length)];
+			}
+
+			changeBackground();
+
+    </script>
+
+</head>
+<body>
+	<div class="wrap">
+        <div class="eye"></div>
+        <div class="eye"></div>
+        <div class="mouth"></div>
+    </div>
+    	<div class="FuckPriority"><a class="a"href="https://www.facebook.com/events/301654266948688/?acontext=%7B%22ref%22%3A%222%22%2C%22ref_dashboard_filter%22%3A%22upcoming%22%2C%22action_history%22%3A%22[%7B%5C%22surface%5C%22%3A%5C%22dashboard%5C%22%2C%5C%22mechanism%5C%22%3A%5C%22main_list%5C%22%2C%5C%22extra_data%5C%22%3A[]%7D]%22%7D"><h1 class="Refresh">Trace The Face! <br/> By Kevin & Elaine</h1></a></div>
+       	<h1 class="title">View on your phone too! </h1>
+<!--        <h1 class="Directions">  kevincadena.com/webtoons/traceface </h1> -->
+        	<a class="a" href="http://kevincadena.com/webtoons/traceface/"><h1 class="Fast-Slow">Click Here to Refresh</h1></a>
+	<canvas id="canvas" resize hidpi="off" ></canvas>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="description" content="Sketchbook Site for Kevin Cadena">
+        <meta name="author" content="Kevin Cadena">
+        <title>Sketchbook</title>
+        <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+        <style>
+
+            @-webkit-keyframes pulse {
+      0% {background-color: #45CEEF;}
+     25% {background-color: #FFF5A5;}
+     50% {background-color: #FFD4DA;}
+     75% {background-color: #99D2E4;}
+     100% {background-color: #D8CAB4;}
+}
+
+            body {
+
+                    -webkit-animation: pulse 10s infinite alternate;
+    background-color: #45CEEF;
+            }
+            h1 {
+                position:fixed;
+                font-size:80px;
+                width:1000px;
+                height: 200px;
+                font-family:'Conv_JRUG_PUNK';
+                color:White;
+               -webkit-text-stroke-width: .5px;
+               -webkit-text-stroke-color: black;
+               z-index: 1000;
+
+top: 20%;
+left: 50%;
+margin-top: -100px; /* Negative half of height. */
+margin-left: -250px;
+            }
+
+            h2 {
+                text-align: center;
+                color:black;
+                z-index: 99999;
+                font-family: sans-serif;
+                position:fixed;
+                position: fixed;
+                width: 500px;
+                height: 200px;
+                top: 100%;
+                left: 50%;
+                margin-top: -100px; /* Negative half of height. */
+                margin-left: -250px;
+
+            }
+
+            iframe {
+                width: 300px;
+                height:300px;
+                pointer-events: none;
+                background-color: white;
+                    -webkit-animation-name:             rotate;
+    -webkit-animation-duration:         10s;
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+                box-shadow: 1px 1px 13px 2px rgba(0, 0, 0, 0.31)
+
+            }
+
+            a {
+                height:300px;
+                width:300px;
+                z-index: 1000;
+                display:inline-block;
+
+            }
+
+            ul {
+                list-style-type: none;
+                margin-top:250px/*                 margin-top: 100px; */
+            }
+
+            li {
+                display: inline;
+                margin: 30px;
+                margin-bottom: 50px;
+                -ms-transform: translate(50px, 100px); /* IE 9 */
+                -webkit-transform: translate(50px, 100px); /* Safari */
+                transform: translate(50px, 100px);
+            }
+
+            .audioLink {
+                position: fixed;
+                top: 20px;
+            }
+            .audioLink:hover {
+                opacity: .5;
+            }
+            	@font-face {
+            	font-family: 'Conv_JRUG_PUNK';
+            	src: url('fonts/JRUG_PUNK.eot');
+            	src: local('☺'), url('fonts/JRUG_PUNK.woff') format('woff'), url('fonts/JRUG_PUNK.otf') format('truetype'), url('fonts/JRUG_PUNK.svg') format('svg');
+            	font-weight: normal;
+            	font-style: normal;
+}
+                @-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 60px;
+    width:400px;
+    margin-left: -180px;
+  }
+
+  ul {
+      margin-top: 150px;
+      margin-left: 20px;
+  }
+}
+
+
+        </style>
+        <script>
+
+        </script>
+
+    </head>
+
+    <body>
+        <audio id="bgaudio" autoplay loop>
+            <source src="showtime.mp3">
+        </audio>
+        <h1>KEVIN'S WEB SKETCHBOOK</h1>
+        <h2>A Place for Documentation and Experimentation</h2>
+        <a class="audioLink" style="width:50px; height: 50px;" href="#noscroll" id="mute">
+            <img style="width:50px; height:50px;" onclick="changeImage()" src="img/audio_off.png">
+
+        </a>
+        <ul>
+            <li><a href="pg1/index.html"><iframe id="rotate" src="http://kevincadena.com/webbook/pg1/"></iframe></a></li>
+           <li><a href="pg2/index.html"><iframe id="rotate "src="http://kevincadena.com/webbook/pg2/"></iframe></a></li>
+           <li><a href="pg3/index.html"><iframe id="rotate "src="http://kevincadena.com/webbook/pg3/"></iframe></a></li>
+           <li><a href="pg4/index.html"><iframe id="rotate "src="http://kevincadena.com/webbook/pg4/index.html"></iframe></a></li>
+           <li><a href="pg5/index.html"><iframe id="rotate "src="http://kevincadena.com/webbook/pg5/index.html"></iframe></a></li>
+           <li><a href="pg6/index.html"><iframe id="rotate "src="http://kevincadena.com/webbook/pg6/index.html"></iframe></a></li>
+           <li><a href="pg7/index.html"><iframe id="rotate "src="http://kevincadena.com/webbook/pg7/index.html"></iframe></a></li>
+           <li><a href="pg8/index.html"><iframe id="rotate "src="http://kevincadena.com/webbook/pg8/index.html"></iframe></a></li>
+           <li><a href="pg9/index.html"><iframe id="rotate "src="http://kevincadena.com/webbook/pg9/index.html"></iframe></a></li>
+           <li><a href="pg10/index.html"><iframe id="rotate "src="http://kevincadena.com/webbook/pg10/index.html"></iframe></a></li>
+        </ul>
+
+        <script>
+
+                var audio = document.getElementById('bgaudio');
+
+                        document.getElementById('mute').addEventListener('click', function (e)
+                        {
+                            e = e || window.event;
+                            audio.muted = !audio.muted;
+                            e.preventDefault();
+                        }, false);
+
+
+
+        </script>
+
+    </body>
+</html>

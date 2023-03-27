@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="anime.min.js"></script> 
+        <style>
+            body {
+                overflow: hidden;
+            }
+	
+            .circlewrap {
+                position: absolute;
+                top:0px;
+                left:0px;
+                z-index: 10
+            }
+            
+            #circle {
+                margin-top: 20px;
+                margin-left: 40px;
+                float:left;
+                height: 100px;
+                width:100px;
+                border: 5px solid #0052ff;
+                border-radius: 100px;
+            }
+        </style> 
+    </head>
+        
+    <body>
+
+        <div class="circlewrap">
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>            
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>            
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>            
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>            
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>            
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div> 
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>            
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>            
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div> 
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>            
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>            
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div> 
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>            
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>            
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>                         
+        </div>
+        
+    </body>
+        
+         
+        <script>
+            anime({
+  targets: '#curvedarrow',
+  loop:true,
+  rotate: '1turn',
+  translateX: [
+    { value: 250, duration: 1000, delay: 500, elasticity: 0 },
+    { value: 0, duration: 1000, delay: 500, elasticity: 0 }
+  ],
+  translateY: [
+    { value: -40, duration: 500, elasticity: 100 },
+    { value: 40, duration: 500, delay: 1000, elasticity: 100 },
+    { value: 0, duration: 500, delay: 1000, elasticity: 100 }
+  ],
+  scaleX: [
+    { value: 4, duration: 100, delay: 500, easing: 'easeOutExpo' },
+    { value: 1, duration: 900, elasticity: 300 },
+    { value: 4, duration: 100, delay: 500, easing: 'easeOutExpo' },
+    { value: 1, duration: 900, elasticity: 300 }
+  ],
+  scaleY: [
+    { value: [1.75, 1], duration: 500 },
+    { value: 2, duration: 50, delay: 1000, easing: 'easeOutExpo' },
+    { value: 1, duration: 450 },
+    { value: 1.75, duration: 50, delay: 1000, easing: 'easeOutExpo' },
+    { value: 1, duration: 450 }
+  ]
+});
+
+    anime({
+        targets: '#circle',
+        scale: [
+            {value: 2, duration: 300, elasticity: 200},
+            {value: 1, duraction:1000, elasticity: 500},
+            {value: 7, duration: 2000},
+            
+        ],
+        loop:true
+    });
+        </script>
+    </body>
+</html>
